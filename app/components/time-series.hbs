@@ -1,0 +1,17 @@
+<div
+  class="timeseries__container"
+  ...attributes
+  {{did-insert this.fetchData @location}}
+  {{did-update this.fetchData @location}}
+>
+  <h5 class="timeseries__title">{{@title}}</h5>
+  <ApexChart
+    class="timeseries__chart"
+    @type="line"
+    @width={{@width}}
+    @height={{@height}}
+    @series={{this.series}}
+    @chartOptions={{this.chartOptions}}
+  />
+</div>
+

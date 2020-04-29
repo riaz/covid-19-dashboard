@@ -46,6 +46,13 @@
           @location={{this.currentLocation}}
         />
       {{/if}}
+      <TimeSeries
+        class="dashboard__divider p-t-10"
+        @title="Cases over time"
+        @location={{this.currentLocation}}
+        @width="95%"
+        @height="200px"
+      />
       <HelpLinks class="dashboard__divider p-t-10" />
     </section>
   {{else}}
