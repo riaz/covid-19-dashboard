@@ -7,11 +7,12 @@ import { inject as service } from '@ember/service';
 import numeral from 'numeral';
 
 const METRICS = {
-  'totalConfirmedCases': 'Confirmed',
-  'totalDeaths': 'Fatal'
+  'numActiveCases': 'Active',
+  'numDeaths': 'Fatal',
+  'numRecoveredCases': 'Recovered'
 }
 
-export default class TimeSeriesComponent extends Component {
+export default class StackedBarComponent extends Component {
   @service intl;
 
   get chartOptions() {
@@ -19,6 +20,7 @@ export default class TimeSeriesComponent extends Component {
 
     return {
       chart: {
+        stacked: true,
         toolbar: {
           show: false
         },
@@ -40,9 +42,8 @@ export default class TimeSeriesComponent extends Component {
         },
         offsetX: 20
       },
-      stroke: {
-        curve: "smooth",
-        width: 2
+      dataLabels: {
+        enabled: false
       },
       tooltip: {
         style: {
